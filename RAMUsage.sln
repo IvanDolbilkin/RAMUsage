@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.32106.194
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RAMUsage.Design", "RAMUsage.Design\RAMUsage.Design.csproj", "{8A94AC33-DD63-4045-BE93-9BC89328A83D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RAMUsage.Core", "RAMUsage.Core\RAMUsage.Core.csproj", "{48246CEB-82FE-4FCA-A9B6-DF173E2CDD11}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8A94AC33-DD63-4045-BE93-9BC89328A83D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8A94AC33-DD63-4045-BE93-9BC89328A83D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8A94AC33-DD63-4045-BE93-9BC89328A83D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8A94AC33-DD63-4045-BE93-9BC89328A83D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{48246CEB-82FE-4FCA-A9B6-DF173E2CDD11}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{48246CEB-82FE-4FCA-A9B6-DF173E2CDD11}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{48246CEB-82FE-4FCA-A9B6-DF173E2CDD11}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{48246CEB-82FE-4FCA-A9B6-DF173E2CDD11}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {C5A221D4-A53C-463E-AD24-82C0A9A240B8}
+	EndGlobalSection
+EndGlobal

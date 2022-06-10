@@ -1,0 +1,53 @@
+﻿<Window x:Class="RAMUsage.Design.ChartWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:RAMUsage.Design"
+        mc:Ignorable="d"
+        Title="ChartWindow" Height="450" Width="800">
+    <Window.DataContext>
+        <local:Chart/>
+    </Window.DataContext>
+    <Window.Resources>
+        <local:PolygonConverter x:Key="PolygonConverter"/>
+    </Window.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Menu Height="30" VerticalAlignment="Top" Grid.Row="0" Background="#FF673AB7">
+            <MenuItem Header="File" Height="30" FontSize="14" FontWeight="Bold" Foreground="#DDFFFFFF">
+                <MenuItem Name="Exit" Header="Exit" Click="Exit_Click" Height="20" Foreground="#DD000000" FontWeight="Normal"/>
+            </MenuItem>
+            <MenuItem Header="Edit" Height="28" FontSize="13" Foreground="#DDFFFFFF" FontWeight="Bold"/>
+            <MenuItem Header="View" Height="28" FontSize="13" FontWeight="Bold" Foreground="#DDFFFFFF"/>
+        </Menu>
+        <WrapPanel Grid.Row="1">
+            <TextBlock Margin="10, 5" Text="RAM:" FontSize="14"/>
+            <TextBlock Margin="0, 5" Text="{Binding LastRAMValue, StringFormat=##0.##}" FontSize="14" FontWeight="Bold"/>
+            <TextBlock Margin="0, 5" Text="%" FontSize="14" FontWeight="Bold"/>
+        </WrapPanel>
+        <Border Margin="10" Grid.Row="2" BorderThickness="1" BorderBrush="#FF673AB7" SnapsToDevicePixels="True">
+            <Canvas ClipToBounds="True">
+                <Polygon Stroke="#FFC9ADE6" Fill="#FFF6EAFF">
+                    <Polygon.Resources>
+                        <Style TargetType="Polygon">
+                            <Setter Property="Points">
+                                <Setter.Value>
+                                    <MultiBinding Converter="{StaticResource PolygonConverter}">
+                                        <Binding Path="ProcessorTime.Values"/>
+                                        <Binding Path="ActualWidth" RelativeSource="{RelativeSource AncestorType=Canvas}"/>
+                                        <Binding Path="ActualHeight" RelativeSource="{RelativeSource AncestorType=Canvas}"/>
+                                    </MultiBinding>
+                                </Setter.Value>
+                            </Setter>
+                        </Style>
+                    </Polygon.Resources>
+                </Polygon>
+            </Canvas>
+        </Border>
+    </Grid>
+</Window>
